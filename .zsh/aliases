@@ -1,0 +1,26 @@
+# Config management setup
+alias config='/usr/bin/git --git-dir=/Users/manderegg/.cfg/.git/ --work-tree=/Users/manderegg'
+
+# Other aliases
+alias weather="curl wttr.in/35216"
+alias migdate="date '+%Y%m%d%H%M%S'"
+alias grhs="git reset --soft"
+alias gdh="git diff HEAD~1 HEAD"
+alias gpo="git push origin"
+alias gocov="go test ./... --coverpkg ./... --coverprofile=cover_all.out;grep -v mocks cover_all.out > cover.out;go tool cover -html=cover.out;rm cover*.out"
+alias gocovt="go test ./... --coverpkg ./... --coverprofile=cover_all.out;grep -v mocks cover_all.out > cover.out;go tool cover -func=cover.out;rm cover*.out"
+alias swagen="swagger generate spec -o ./swagger.json"
+
+# Browse to repo on web
+gh(){
+  open $(git config remote.origin.url | sed "s/git@\(.*\):\(.*\).git/https:\/\/\1\/\2/")/$1$2
+}
+
+# Open current branch
+alias ghb='gh tree/$(git symbolic-ref --quiet --short HEAD )'
+
+# Open current directory/file in current branch
+alias ghbf="gh tree/$(git symbolic-ref --quiet --short HEAD )/$(git rev-parse --show-prefix)"
+
+# Open current directory/file in master branch
+alias ghf='gh tree/master/$(git rev-parse --show-prefix)'
