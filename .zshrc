@@ -138,4 +138,5 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 # Add GOPATH binaries to path
 #export PATH=/Users/manderegg/go/bin:$PATH
 
-
+# Configure asdf - last line
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
