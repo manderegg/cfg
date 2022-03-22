@@ -15,7 +15,7 @@ export ZSH="/Users/manderegg/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,7 +77,7 @@ export ZSH="/Users/manderegg/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dotenv autojump brew ssh-agent zsh-autosuggestions)
+plugins=(git dotenv autojump brew ssh-agent zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,42 +109,11 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.zsh/aliases
 
-# Other aliases
-alias weather="curl wttr.in/35216"
-alias migdate="date '+%Y%m%d%H%M%S'"
-alias gs="git status"
-alias grhs="git reset --soft"
-alias gdh="git diff HEAD~1 HEAD"
-alias gpo="git push origin"
-alias gocov="go test ./... --coverpkg ./... --coverprofile=cover_all.out;grep -v mocks cover_all.out > cover.out;go tool cover -html=cover.out;rm cover*.out"
-alias gocovt="go test ./... --coverpkg ./... --coverprofile=cover_all.out;grep -v mocks cover_all.out > cover.out;go tool cover -func=cover.out;rm cover*.out"
-alias swagen="swagger generate spec -o ./swagger.json"
-
-# Browse to repo on web
-gh(){
-  open $(git config remote.origin.url | sed "s/git@\(.*\):\(.*\).git/https:\/\/\1\/\2/")/$1$2
-}
-
-# Open current branch
-alias ghb='gh tree/$(git symbolic-ref --quiet --short HEAD )'
-
-# Open current directory/file in current branch
-alias ghbf="gh tree/$(git symbolic-ref --quiet --short HEAD )/$(git rev-parse --show-prefix)"
-
-# Open current directory/file in master branch
-alias ghf='gh tree/master/$(git rev-parse --show-prefix)'
-
-# Enable powerlevel10k
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Enable syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # Docker
-export DOCKER_NETRC="$(cat ~/.netrc)"
+# export DOCKER_NETRC="$(cat ~/.netrc)"
 
 # NPM
 export NPM_TOKEN=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
@@ -167,6 +136,6 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # Add GOPATH binaries to path
-export PATH=/Users/manderegg/go/bin:$PATH
+#export PATH=/Users/manderegg/go/bin:$PATH
 
 
