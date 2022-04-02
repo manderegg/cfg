@@ -15,7 +15,7 @@ export ZSH="/Users/manderegg/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dotenv autojump brew ssh-agent zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git dotenv autojump brew ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -137,6 +137,13 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # Add GOPATH binaries to path
 #export PATH=/Users/manderegg/go/bin:$PATH
+
+# Source theme
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# Add plugins
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Configure asdf - last line
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
