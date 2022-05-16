@@ -4,12 +4,19 @@ alias config='/usr/bin/git --git-dir=/Users/manderegg/.cfg/.git/ --work-tree=/Us
 # Other aliases
 alias weather="curl wttr.in/35216"
 alias migdate="date '+%Y%m%d%H%M%S'"
-alias grhs="git reset --soft"
-alias gdh="git diff HEAD~1 HEAD"
-alias gpo="git push origin"
+alias ts="date -u +'%Y%m%d%H%M%S'"
+
+# Go stuff
 alias gocov="go test ./... --coverpkg ./... --coverprofile=cover_all.out;grep -v mocks cover_all.out > cover.out;go tool cover -html=cover.out;rm cover*.out"
 alias gocovt="go test ./... --coverpkg ./... --coverprofile=cover_all.out;grep -v mocks cover_all.out > cover.out;go tool cover -func=cover.out;rm cover*.out"
 alias swagen="swagger generate spec -o ./swagger.json"
+
+# Additional git stuff
+alias grhs="git reset --soft"
+alias gdh="git diff HEAD~1 HEAD"
+alias gpo="git push origin -u"
+alias grbod="git rebase origin/$(git_develop_branch)"
+alias gwc="git whatchanged"
 
 # Browse to repo on web
 gh(){
@@ -24,3 +31,15 @@ alias ghbf='gh tree/$(git symbolic-ref --quiet --short HEAD )/$(git rev-parse --
 
 # Open current directory/file in master branch
 alias ghf='gh tree/master/$(git rev-parse --show-prefix)'
+
+# npx shortcuts
+alias sqlz='npx sequelize-cli'
+alias mig='sqlz db:migrate'
+alias migu='sqlz db:migrate:undo'
+alias migc='sqlz migration:generate --name'
+alias migb='sqlz db:migrate --options-path db/billing/.sequelizerc --config db/billing/config.js'
+alias migbu='sqlz db:migrate:undo --options-path db/billing/.sequelizerc --config db/billing/config.js'
+alias migbc='sqlz migration:generate --options-path db/billing/.sequelizerc --name'
+alias nest='npx nest'
+alias jest='npx jest'
+alias tloc='API_URL=http://localhost:3000 npx playwright test'
