@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -140,6 +140,9 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 # Add GOPATH binaries to path
 #export PATH=/Users/manderegg/go/bin:$PATH
 
+# Java stuff
+export PATH=/opt/homebrew/opt/openjdk@11/bin:$PATH
+
 # Source theme
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -153,4 +156,4 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=219'
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
