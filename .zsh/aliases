@@ -14,7 +14,7 @@ alias swagen="swagger generate spec -o ./swagger.json"
 # Additional git stuff
 alias grhs="git reset --soft"
 alias gdh="git diff HEAD~1 HEAD"
-alias gpo="git push origin -u"
+alias gpo="git push origin"
 alias grbod="git rebase origin/$(git_develop_branch)"
 alias gwc="git whatchanged"
 
