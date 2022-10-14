@@ -1,5 +1,5 @@
 # Config management setup
-alias config='/usr/bin/git --git-dir=/Users/manderegg/.cfg/.git/ --work-tree=/Users/manderegg'
+alias config='/usr/bin/git --git-dir=/home/matt/.cfg/.git/ --work-tree=/home/matt'
 
 # Other aliases
 alias weather="curl wttr.in/35216"

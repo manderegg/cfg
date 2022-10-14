@@ -8,3 +8,6 @@
 	autoSetupRemote = true
 [rerere]
 	enabled = true
+[user]
+	name = Matthew Anderegg
+	email = 1679560+manderegg@users.noreply.github.com

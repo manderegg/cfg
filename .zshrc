@@ -11,7 +11,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/manderegg/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -141,19 +141,22 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 #export PATH=/Users/manderegg/go/bin:$PATH
 
 # Java stuff
-export PATH=/opt/homebrew/opt/openjdk@11/bin:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/opt/openjdk@11/bin:$PATH
 
 # Source theme
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /home/linuxbrew/.linuxbrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # Add plugins
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=219'
 
 # Configure asdf - last line
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
+
+# opam configuration
+[[ ! -r /home/matt/.opam/opam-init/init.zsh ]] || source /home/matt/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
