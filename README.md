@@ -23,9 +23,7 @@ Manage configuration files using Git.
    - Bootstrap alias for current session until configuration setup complete
 4. `config config --local status.showUntrackedFiles no`
    - Only care about files we explicitly add to the repository
-5. `config checkout`
-   - Load configuration
-   - NOTE: If this step fails due to overwrite conflicts, remove/rename file in question and re-checkout
+5. Install [Oh My Zsh](https://ohmyz.sh/#install)
 6. `brew bundle`
    - Install all packages from the `Brewfile`
 
