@@ -15,8 +15,12 @@ alias swagen="swagger generate spec -o ./swagger.json"
 alias grhs="git reset --soft"
 alias gdh="git diff HEAD~1 HEAD"
 alias gpo="git push origin"
-alias grbod="git rebase origin/$(git_develop_branch)"
+alias grbod="git rebase origin/develop"
 alias gwc="git whatchanged"
+alias gbls="git branch --list"
+alias gss="git stash save"
+alias gsp="git stash pop"
+alias gsl="git stash list"
 
 # Browse to repo on web
 gh(){
@@ -28,6 +32,12 @@ alias ghb='gh tree/$(git symbolic-ref --quiet --short HEAD )'
 
 # Open current directory/file in current branch
 alias ghbf='gh tree/$(git symbolic-ref --quiet --short HEAD )/$(git rev-parse --show-prefix)'
+
+# Open PR for current branch
+alias ghpr='gh pull/new/$(git symbolic-ref --quiet --short HEAD )'
+
+# Open PRs for current repository
+alias ghps='gh pulls/'
 
 # Open current directory/file in master branch
 alias ghf='gh tree/master/$(git rev-parse --show-prefix)'
@@ -43,3 +53,13 @@ alias migbc='sqlz migration:generate --options-path db/billing/.sequelizerc --na
 alias nest='npx nest'
 alias jest='npx jest'
 alias tloc='API_URL=http://localhost:3000 npx playwright test'
+
+# Docker
+alias tailhawkeye='docker logs -f hawkeye-hawkeye-1 --tail 10'
+alias tailadmin='docker logs -f admin-console-admin-console-1 --tail 10'
+alias tailtalon='docker logs -f falcon-talon-1 --tail 10'
+alias tailcuckoo='docker logs -f falcon-cuckoo-1 --tail 10'
+alias tailfalcon='docker logs -f falcon-web-1 --tail 10'
+
+# Misc
+alias gri='grep -i'
