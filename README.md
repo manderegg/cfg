@@ -4,7 +4,7 @@ Manage configuration files using Git.
 
 ## Initial setup
 
-1. `git init $HOME/CFG`
+1. `git init $HOME/.cfg`
    - Create a Git repository to track our configuration files
 2. `alias config='/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME'`
    - Create alias to run Git commands from outside of the configuration repository
