@@ -77,3 +77,7 @@ alias drh='docker restart hawkeye-hawkeye-1 && tailhawkeye'
 # Misc
 alias gri='grep -i'
 alias oktaaws='okta-awscli -P $(op item get "Okta" --vault "Private" --fields label=password) -t $(op item get "Okta" --vault "Private" --otp)'
+alias codeartifact='export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain tilled --domain-owner 224927851541 --region us-east-1 --query authorizationToken --output text`'
+
+# Not aliases
+gdb() { gbls | grep -i "$1" | xargs git branch -D } # delete git branches 

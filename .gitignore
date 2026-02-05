@@ -39,6 +39,7 @@ __debug_bin
 
 # Environment variables
 .env*
+codeartifact_token.txt
 
 # Executables
 bin
@@ -51,4 +52,12 @@ swagger.json
 .history
 
 # AI hints
-airules.md
+copilot-instructions.md
+copilot-instructions.original.md
+
+#Claude Code
+.claude
+
+
+# ASDF config
+.tool-versions
